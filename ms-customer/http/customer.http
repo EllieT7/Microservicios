@@ -1,0 +1,41 @@
+GET http://localhost:7070/customers/test
+
+###
+
+GET http://localhost:7070/customers/list
+
+###
+
+
+POST http://localhost:7070/customers/token
+Content-Type: application/x-www-form-urlencoded
+# Accept: application/x-www-form-urlencoded
+# Content-Type: application/json
+Accept: application/json
+
+{
+    "client_id": "backend",
+    "client_secret": "bJ0drlN5kdWjBSJLRi6p0bd5xM5Qy7su",
+    "grant_type": "client_credentials"
+}
+
+# > {%
+#     client.global.set("auth-token", "Bearer " + response.body["access_token"]);
+#     client.log(client.global.get("auth-token"));
+# %}
+
+GET http://localhost:7070/customers/
+
+### GENERAR TOKEN
+POST http://localhost:8008/realms/software/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+response_type=code&grant_type=client_credentials&client_id=backend&client_secret=E4MVBwHj7xWmsMUDZbUE95GbgfHGoRVY
+
+# > {%
+#     client.global.set("auth-token", "Bearer " + response.body["access_token"]);
+#     client.log(client.global.get("auth-token"));
+# %}
+
+###
+GET http://localhost:7070/customers/convert?to=eur&from=usd&amount=55

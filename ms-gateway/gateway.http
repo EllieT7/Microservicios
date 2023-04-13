@@ -1,0 +1,15 @@
+### Directo
+GET http://localhost:7070/customers/test
+
+
+###
+GET http://localhost:8435/accounts/test
+
+### Gateway
+GET http://localhost:8282/ms-customer/customers/list
+
+### Accounts
+GET http://loalhost:8282/ms-account/accounts/test
+
+### API
+GET http://localhost:8282/currency-converter/
